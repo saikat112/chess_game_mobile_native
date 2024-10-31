@@ -1,0 +1,49 @@
+my-chess-game/
+├── frontend/
+│   ├── android/                      # Android-specific code
+│   ├── ios/                          # iOS-specific code
+│   ├── node_modules/                 # Node.js dependencies
+│   ├── src/                          # Source code directory
+│   │   ├── app/                      # Main app directory
+│   │   │   ├── components/           # Reusable components
+│   │   │   │   ├── ChessGame.tsx     # Chess game component
+│   │   │   │   ├── LandingPage.tsx   # Landing page component
+│   │   │   │   ├── NavBar.tsx        # Navigation bar component
+│   │   │   │   ├── play/             # Play section components
+│   │   │   │   │   ├── PlayOnline.tsx       # Component for online gameplay
+│   │   │   │   │   ├── PlayWithFriend.tsx   # Component for friend gameplay
+│   │   │   │   │   ├── PlayWithComputer.tsx # Component for computer gameplay
+│   │   │   │   ├── settings/         # Settings components
+│   │   │   │   │   ├── SettingsScreen.tsx   # Component for game settings
+│   │   │   │   ├── auth/             # Authentication components
+│   │   │   │   │   ├── LoginScreen.tsx       # Login screen component
+│   │   │   │   │   ├── SignUpScreen.tsx      # Signup screen component
+│   │   │   │   │   ├── LogoutScreen.tsx      # Logout functionality
+│   │   │   ├── styles/               # Styling directory
+│   │   │   │   ├── LoginSignUp.css   # CSS for login/signup
+│   │   │   │   ├── global.css        # Global styles
+│   │   │   ├── navigation/           # Navigation setup
+│   │   │   │   ├── AppNavigator.tsx  # Main bottom tab navigation (Home, Learn, Settings)
+│   │   │   ├── screens/              # Screen components
+│   │   │   │   ├── HomeScreen.tsx    # Home screen component
+│   │   │   │   ├── LearnScreen.tsx   # Learn screen component
+│   │   │   │   ├── SettingsScreen.tsx# Settings screen component
+│   │   │   ├── App.tsx               # Main app entry point
+│   │   ├── assets/                   # Static assets like images and fonts
+│   │   ├── config/                   # App configuration files
+│   │   │   ├── api.ts                # API configuration
+│   │   │   ├── socket.ts             # Socket.io configuration
+│   │   ├── state/                    # State management (e.g., Redux or Context)
+│   │   │   ├── actions/              # Redux actions
+│   │   │   │   ├── gameActions.ts    # Game-related actions
+│   │   │   │   ├── userActions.ts    # User-related actions
+│   │   │   ├── reducers/             # Redux reducers
+│   │   │   │   ├── gameReducer.ts    # Game-related state reducer
+│   │   │   │   ├── userReducer.ts    # User-related state reducer
+│   │   │   ├── store.ts              # Redux store configuration
+│   ├── tsconfig.json                 # TypeScript configuration
+│   ├── .eslintrc.json                # ESLint configuration
+│   ├── .gitignore                    # Files to ignore in Git
+│   ├── Dockerfile                    # Dockerfile for app containerization
+│   ├── package.json                  # NPM dependencies and scripts
+│   ├── README.md                     # Project readme and setup instructions

@@ -1,9 +1,17 @@
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
+import React from 'react';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { type IconProps } from '@expo/vector-icons/build/createIconSet';
-import { type ComponentProps } from 'react';
+interface TabBarIconProps {
+  route: { name: string };
+  color: string;
+  size: number;
+}
 
-export function TabBarIcon({ style, ...rest }: IconProps<ComponentProps<typeof Ionicons>['name']>) {
-  return <Ionicons size={28} style={[{ marginBottom: -3 }, style]} {...rest} />;
+export default function TabBarIcon({ route, color, size }: TabBarIconProps) {
+  let iconName;
+  if (route.name === 'Home') iconName = 'home';
+  else if (route.name === 'Learn') iconName = 'school';
+  else if (route.name === 'Settings') iconName = 'settings';
+
+  return <MaterialIcons classname={iconName} size={size} color={color} />;
 }
