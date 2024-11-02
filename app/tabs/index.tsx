@@ -1,9 +1,9 @@
-// BottomTabNavigator.tsx
+// app/tabs/index.tsx
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
-import LearnScreen from '../screens/LearnScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreen from './home';
+import LearnScreen from './learn';
+import SettingsScreen from './settings';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
@@ -11,22 +11,20 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="home"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName: keyof typeof Ionicons.glyphMap;
-
-          if (route.name === "Home") iconName = "home";
-          else if (route.name === "Learn") iconName = "school";
+          if (route.name === "home") iconName = "home";
+          else if (route.name === "learn") iconName = "school";
           else iconName = "settings";
-
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Learn" component={LearnScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="home" component={HomeScreen} />
+      <Tab.Screen name="learn" component={LearnScreen} />
+      <Tab.Screen name="settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 }
