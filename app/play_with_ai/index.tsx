@@ -3,11 +3,11 @@ import { router, useRouter } from 'expo-router';
 import React from 'react';
 import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
-const PlayWithFriendScreen: React.FC = () => {
+const PlayWithAiScreen: React.FC = () => {
   const router = useRouter();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Play with friends</Text>
+      <Text style={styles.title}>Play with AI</Text>
     </View>
   );
 };
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlayWithFriendScreen;
+export default PlayWithAiScreen;
