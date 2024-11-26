@@ -1,12 +1,14 @@
 // app/tabs/play.tsx
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { router, useRouter } from 'expo-router';
+import { View, Text, StyleSheet , Button } from 'react-native';
 
 const PlayScreen: React.FC = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Play Screen</Text>
-      <Text style={styles.text}>Get ready to play some chess!</Text>
+      <Text style={styles.title}>Play</Text>
+      <Button title= "Play With Friends " onPress={() => router.push('/play_with_friend')} />
     </View>
   );
 };

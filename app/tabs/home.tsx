@@ -1,13 +1,15 @@
 // app/tabs/home.tsx
+import { router, useRouter } from 'expo-router';
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
 const HomeScreen: React.FC = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home Screen</Text>
       <Text style={styles.text}>Welcome to the Home Screen!</Text>
-      <Button title="Explore More" onPress={() => alert('Explore More!')} />
+      <Button title= "Play" onPress={() => router.push('/tabs/play')} />
     </View>
   );
 };
