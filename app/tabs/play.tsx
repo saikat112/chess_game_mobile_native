@@ -1,13 +1,19 @@
-// app/tabs/play.tsx
 import React from "react";
 import { useRouter } from "expo-router";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const playModes = [
-  { title: "Play Online", route: "/play_online" },
-  { title: "Play With AI", route: "/play_with_ai" },
-  { title: "Pass and Play", route: "/pass_and_play" },
-  { title: "Play With Friends", route: "/play_with_friend" },
+// Define a more specific type for the route
+type PlayMode = {
+  title: string;
+  route: "/play_online" | "/play_with_ai" | "/pass_and_play" | "/play_with_friend"; // List all valid routes here
+  description: string;
+};
+
+const playModes: PlayMode[] = [
+  { title: "Play Online", route: "/play_online", description: "Challenge players worldwide." },
+  { title: "Play With AI", route: "/play_with_ai", description: "Practice against AI opponents." },
+  { title: "Pass and Play", route: "/pass_and_play", description: "Play locally with a friend." },
+  { title: "Play With Friends", route: "/play_with_friend", description: "Invite friends to play online." },
 ];
 
 const PlayScreen: React.FC = () => {
@@ -20,9 +26,10 @@ const PlayScreen: React.FC = () => {
         <TouchableOpacity
           key={index}
           style={styles.button}
-          onPress={() => router.push(mode.route)}
+          onPress={() => router.push({ pathname: mode.route })}
         >
           <Text style={styles.buttonText}>{mode.title}</Text>
+          <Text style={styles.description}>{mode.description}</Text>
         </TouchableOpacity>
       ))}
     </View>
@@ -54,6 +61,12 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 18,
     fontWeight: "bold",
+  },
+  description: {
+    marginTop: 5,
+    color: "#d0e8d0",
+    fontSize: 14,
+    textAlign: "center",
   },
 });
 
